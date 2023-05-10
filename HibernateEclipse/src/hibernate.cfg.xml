@@ -18,9 +18,9 @@
         
         <property name="current_session_context_class">thread</property>
         
-		
-<!--        <mapping class="javabrains.entity.Vehicle"/>-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
         
+      	<!-- <mapping class="javabrains.entity.Student"/>  -->
 
     </session-factory>
 </hibernate-configuration>
