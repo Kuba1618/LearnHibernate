@@ -22,7 +22,7 @@ public class UpdateStudent {
 			
 			System.out.println("Saved student.Generated id: " + studentId);
 			
-			////////////////  UPDATE'ING USING METHOD////////////////////////
+			////////////////FIRST WAY OF UPDATE'ING////////////////////////
 			session = factory.getCurrentSession();
 			session.beginTransaction();
 			
@@ -36,7 +36,7 @@ public class UpdateStudent {
 			///////////////////////////////////////////////////////////////////
 			
 			
-			/////////////////  UPDATE'ING USING HQL ////////////////////////
+			////////////////// SECOND WAY OF UPDATE'ING////////////////////////
 			session = factory.getCurrentSession();
 			session.beginTransaction();
 			

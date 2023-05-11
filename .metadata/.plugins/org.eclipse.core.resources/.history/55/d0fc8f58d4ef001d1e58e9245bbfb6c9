@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import pl.kielce.hibernate.demo.entity.Student;
 
-public class UpdateStudent {
+public class DeleteStudent {
 
 	public static void main(String[] args) {
 		
@@ -22,30 +22,30 @@ public class UpdateStudent {
 			
 			System.out.println("Saved student.Generated id: " + studentId);
 			
-			////////////////  UPDATE'ING USING METHOD////////////////////////
 			session = factory.getCurrentSession();
 			session.beginTransaction();
 			
-			System.out.println("\nGetting student with id: " + studentId);			
+			System.out.println("\nGetting student with id: " + studentId);
+			
 			Student myStudent = session.get(Student.class,studentId);
 			
 			System.out.println("Updating student...");
 			myStudent.setFirstName("Mathew");
 
+			//commit the transaction
 			session.getTransaction().commit();
-			///////////////////////////////////////////////////////////////////
 			
-			
-			/////////////////  UPDATE'ING USING HQL ////////////////////////
 			session = factory.getCurrentSession();
 			session.beginTransaction();
 			
 			System.out.println("Update email for all students: ");
+			
 			session.createQuery("update Student set email = 'foo@gmail.com'")
 				.executeUpdate();
 			
+			//commit the transaction
 			session.getTransaction().commit();
-			///////////////////////////////////////////////////////////////////
+
 			System.out.println("Done !");
 		
 		}finally {
