@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Table;
 
 
@@ -20,7 +22,10 @@ public class UserDetails {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
 	private String userName;
+	
 	@ElementCollection
+	@JoinTable(name="USER_ADDRESS",
+			joinColumns = @JoinColumn(name="USER_ID"))
 	private Set<Address> listOfAddresses = new HashSet();
 	
 	
