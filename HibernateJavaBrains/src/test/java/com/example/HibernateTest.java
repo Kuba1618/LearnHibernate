@@ -16,13 +16,20 @@ public class HibernateTest {
 		UserDetails user = new UserDetails();
 		user.setUserName(faker.artist().name());
 		
-		Address address = new Address();
-		address.setCityName(faker.address().cityName());
-		address.setStreet(faker.address().streetName());
-		address.setState(faker.address().state());
-		address.setPinCode(faker.address().zipCode());
+		Address address1 = new Address();
+		address1.setCityName(faker.address().cityName());
+		address1.setStreet(faker.address().streetName());
+		address1.setState(faker.address().state());
+		address1.setPinCode(faker.address().zipCode());
 		
-		user.setAddress(address);
+		Address address2 = new Address();
+		address2.setCityName(faker.address().cityName());
+		address2.setStreet(faker.address().streetName());
+		address2.setState(faker.address().state());
+		address2.setPinCode(faker.address().zipCode());
+		
+		user.setHomeAddress(address1);
+		user.setOfficeAddress(address2);
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
