@@ -28,8 +28,8 @@ public class HibernateTest {
 		address2.setState(faker.address().state());
 		address2.setPinCode(faker.address().zipCode());
 		
-		user.setHomeAddress(address1);
-		user.setOfficeAddress(address2);
+		user.getListOfAddresses().add(address1);
+		user.getListOfAddresses().add(address2);
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
