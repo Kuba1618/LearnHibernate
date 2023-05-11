@@ -7,3 +7,6 @@
 1683726943871	Extract method 'displayStudents'
 1683728606184	Copy compilation unit
 1683792861153	Copy compilation unit
+1683795075101	Rename type 'QueryStudentDemo'
+1683795103149	Rename type 'RetrievingStudentDemo'
+1683795122609	Rename type 'PrimaryKeyDemo'
