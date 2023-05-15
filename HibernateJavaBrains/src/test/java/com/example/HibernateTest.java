@@ -36,6 +36,14 @@ public class HibernateTest {
 		session.beginTransaction();
 		session.save(user);
 		session.getTransaction().commit();
+		
+		user = null;
+		
+		session = sessionFactory.openSession();
+		user = (UserDetails) session.get(UserDetails.class,1);
+		session.close();
+		System.out.println(user.getListOfAddresses().size());
+		
 
 	}
 
