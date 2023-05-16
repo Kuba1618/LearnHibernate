@@ -10,7 +10,7 @@
         <property name="hibernate.connection.username">hbstudent</property>
         <property name="hibernate.connection.password">hbstudent</property>
         
-        <property name="connection.pool_size">5</property>	
+        <property name="connection.pool_size">1000</property>	
         
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</property>
         
@@ -18,7 +18,7 @@
         
         <property name="current_session_context_class">thread</property>
         
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         
       	<mapping class="com.example.UserDetails"/> 
       	<mapping class="com.example.Address"/> 
