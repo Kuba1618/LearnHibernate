@@ -16,34 +16,18 @@ public class HibernateTest {
 		UserDetails user = new UserDetails();
 		user.setUserName(faker.artist().name());
 		
-		Address address1 = new Address();
-		address1.setCityName(faker.address().cityName());
-		address1.setStreet(faker.address().streetName());
-		address1.setState(faker.address().state());
-		address1.setPinCode(faker.address().zipCode());
+		Vehicle vehicle = new Vehicle();
+		vehicle.setVehicleName("Car");
 		
-		Address address2 = new Address();
-		address2.setCityName(faker.address().cityName());
-		address2.setStreet(faker.address().streetName());
-		address2.setState(faker.address().state());
-		address2.setPinCode(faker.address().zipCode());
-		
-		user.getListOfAddresses().add(address1);
-		user.getListOfAddresses().add(address2);
+		user.setVehicle(vehicle);
 		
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(user);
+		session.save(vehicle);
 		session.getTransaction().commit();
-		
-		user = null;
-		
-		session = sessionFactory.openSession();
-		user = (UserDetails) session.get(UserDetails.class,1);
 		session.close();
-		System.out.println(user.getListOfAddresses().size());
-		
 
 	}
 

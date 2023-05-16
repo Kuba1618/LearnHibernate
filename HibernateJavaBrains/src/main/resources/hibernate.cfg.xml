@@ -22,6 +22,7 @@
         
       	<mapping class="com.example.UserDetails"/> 
       	<mapping class="com.example.Address"/> 
+      	<mapping class="com.example.Vehicle"/> 
 
     </session-factory>
 </hibernate-configuration>
