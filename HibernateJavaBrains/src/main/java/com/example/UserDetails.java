@@ -3,6 +3,7 @@ package com.example;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,9 +20,9 @@ public class UserDetails {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
 	private String userName;
-	@OneToMany(mappedBy="user")
+	@OneToMany(cascade = CascadeType.ALL)
 	private Collection<Vehicle> vehicle = new ArrayList<>();
-	
+	 
 	public int getUserId() {
 		return userId;
 	}
