@@ -18,13 +18,11 @@
         
         <property name="current_session_context_class">thread</property>
         
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         
-      	<mapping class="pl.kielce.hibernate.entity.Student"/> 
-      	<!--   <mapping class="com.example.Address"/> 
-      	<mapping class="com.example.Vehicle"/> 
-      	<mapping class="com.example.TwoWheeler"/> 
-      	<mapping class="com.example.FourWheeler"/>  --> 
+      	<mapping class="pl.kielce.entity.Vehicle"/> 
+      	<mapping class="pl.kielce.entity.Car"/> 
+      	<mapping class="pl.kielce.entity.Motorcycle"/>  
 
     </session-factory>
 </hibernate-configuration>
